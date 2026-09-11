@@ -28,9 +28,10 @@
   ============================================================
   TRANG ĐĂNG KÝ "PHỔ CẬP AI MIỄN PHÍ" — Hồ Trí Tượng
   - 1 file duy nhất, ảnh chân dung đã nhúng sẵn (data URI).
-  - Form là form riêng, gửi thẳng vào Google Form / Google Sheet
-    (action = .../formResponse, các trường entry.xxx đã map đúng).
-  - Đổi câu hỏi/đáp án: sửa trong <form id="rform">, giữ nguyên name="entry.xxx".
+  - Form riêng (id="rform"), gửi bằng fetch() tới webhook Make (biến
+    SUBMIT_URL trong <script>) → Make ghi thẳng vào Google Sheet
+    "Đăng ký Phổ cập AI" của anh (không qua endpoint nội bộ của Google
+    nên không bị chặn).
   - Nhóm Zalo hiện ở màn hình "Đăng ký thành công".
   ============================================================
 -->
@@ -650,31 +651,29 @@
     </div>
 
     <div class="form-shell">
-      <!-- Câu trả lời được gửi thẳng vào Google Form / Google Sheet của anh -->
-      <iframe name="gform_sink" title="Kênh gửi form" style="display:none"></iframe>
-
-      <form id="rform" class="rform" method="POST" target="gform_sink" novalidate
-            action="https://docs.google.com/forms/d/e/1FAIpQLSebhycF-9c86sQKaoHT3JpROQxuXEilGIRHN1sU064fBjOAwQ/formResponse">
+      <!-- Gửi qua webhook Make → ghi thẳng vào Google Sheet "Đăng ký Phổ cập AI".
+           Đáng tin cậy: đây là endpoint của chính anh, không qua formResponse nội bộ của Google. -->
+      <form id="rform" class="rform" novalidate>
 
         <div class="field">
           <label class="q" for="f-name">Họ và tên <span class="req">*</span></label>
-          <input type="text" id="f-name" name="entry.2032715349" autocomplete="name" placeholder="Nguyễn Văn A" required />
+          <input type="text" id="f-name" name="name" autocomplete="name" placeholder="Nguyễn Văn A" required />
           <span class="err">Vui lòng nhập họ và tên.</span>
         </div>
 
         <div class="field">
           <label class="q" for="f-phone">Số điện thoại <span class="req">*</span></label>
-          <input type="tel" id="f-phone" name="entry.1974637660" autocomplete="tel" inputmode="tel" placeholder="09xx xxx xxx" required />
+          <input type="tel" id="f-phone" name="phone" autocomplete="tel" inputmode="tel" placeholder="09xx xxx xxx" required />
           <span class="err">Vui lòng nhập số điện thoại hợp lệ.</span>
         </div>
 
         <div class="field">
           <span class="q">Anh/Chị đã dùng AI chưa? Hiện tại đang ở mức nào? <span class="req">*</span></span>
           <div class="opts">
-            <label class="opt"><input type="radio" name="entry.1288014293" value="Chưa từng sử dụng AI" required /><span>Chưa từng sử dụng AI</span></label>
-            <label class="opt"><input type="radio" name="entry.1288014293" value="Đã thử ChatGPT/Gemini nhưng chưa biết dùng hiệu quả" /><span>Đã thử ChatGPT/Gemini nhưng chưa biết dùng hiệu quả</span></label>
-            <label class="opt"><input type="radio" name="entry.1288014293" value="Đã dùng AI cho một vài công việc" /><span>Đã dùng AI cho một vài công việc</span></label>
-            <label class="opt"><input type="radio" name="entry.1288014293" value="Đang dùng AI thường xuyên nhưng muốn học bài bản hơn" /><span>Đang dùng AI thường xuyên nhưng muốn học bài bản hơn</span></label>
+            <label class="opt"><input type="radio" name="level" value="Chưa từng sử dụng AI" required /><span>Chưa từng sử dụng AI</span></label>
+            <label class="opt"><input type="radio" name="level" value="Đã thử ChatGPT/Gemini nhưng chưa biết dùng hiệu quả" /><span>Đã thử ChatGPT/Gemini nhưng chưa biết dùng hiệu quả</span></label>
+            <label class="opt"><input type="radio" name="level" value="Đã dùng AI cho một vài công việc" /><span>Đã dùng AI cho một vài công việc</span></label>
+            <label class="opt"><input type="radio" name="level" value="Đang dùng AI thường xuyên nhưng muốn học bài bản hơn" /><span>Đang dùng AI thường xuyên nhưng muốn học bài bản hơn</span></label>
           </div>
           <span class="err">Vui lòng chọn một mục.</span>
         </div>
@@ -682,24 +681,24 @@
         <div class="field">
           <span class="q">Anh/Chị muốn dùng AI cho việc gì nhất? <span class="req">*</span></span>
           <div class="opts">
-            <label class="opt"><input type="radio" name="entry.962569597" value="Công việc/ Học Tập" required /><span>Công việc / Học tập</span></label>
-            <label class="opt"><input type="radio" name="entry.962569597" value="Kinh doanh" /><span>Kinh doanh</span></label>
-            <label class="opt"><input type="radio" name="entry.962569597" value="Viết nội dung/ Tạo ảnh/video" /><span>Viết nội dung / Tạo ảnh / video</span></label>
-            <label class="opt"><input type="radio" name="entry.962569597" value="Chưa biết, muốn được hướng dẫn" /><span>Chưa biết, muốn được hướng dẫn</span></label>
+            <label class="opt"><input type="radio" name="goal" value="Công việc/ Học Tập" required /><span>Công việc / Học tập</span></label>
+            <label class="opt"><input type="radio" name="goal" value="Kinh doanh" /><span>Kinh doanh</span></label>
+            <label class="opt"><input type="radio" name="goal" value="Viết nội dung/ Tạo ảnh/video" /><span>Viết nội dung / Tạo ảnh / video</span></label>
+            <label class="opt"><input type="radio" name="goal" value="Chưa biết, muốn được hướng dẫn" /><span>Chưa biết, muốn được hướng dẫn</span></label>
           </div>
           <span class="err">Vui lòng chọn một mục.</span>
         </div>
 
         <div class="field">
           <label class="q" for="f-learn">Anh/Chị muốn học điều gì đầu tiên về AI? <span class="req">*</span></label>
-          <textarea id="f-learn" name="entry.985896882" required placeholder="Ví dụ: cách viết câu lệnh cho ChatGPT, dùng AI soạn email, tạo ảnh sản phẩm…"></textarea>
+          <textarea id="f-learn" name="learn" required placeholder="Ví dụ: cách viết câu lệnh cho ChatGPT, dùng AI soạn email, tạo ảnh sản phẩm…"></textarea>
           <span class="err">Vui lòng nhập nội dung.</span>
         </div>
 
         <div class="submit-row">
           <button type="submit" class="btn btn--lg btn--block" id="rsubmit">GỬI ĐĂNG KÝ →</button>
         </div>
-        <p class="hint">Thông tin của anh/chị được gửi trực tiếp và bảo mật</p>
+        <p class="hint" id="rhint">Thông tin của anh/chị được gửi trực tiếp và bảo mật</p>
       </form>
 
       <div class="form-done" id="rdone" hidden>
@@ -719,7 +718,7 @@
     </div>
 
     <p class="form-fallback-link">
-      Gặp trục trặc khi gửi? <a href="https://forms.gle/KGJNTyFaUWjC1CWQ8" target="_blank" rel="noopener">Mở form gốc trên Google »</a>
+      Gặp trục trặc khi gửi? <a href="https://forms.gle/KGJNTyFaUWjC1CWQ8" target="_blank" rel="noopener">Điền form gốc trên Google »</a>
     </p>
   </div>
 </section>
@@ -740,6 +739,9 @@
 </footer>
 
 <script>
+  // Webhook Make → ghi vào Google Sheet "Đăng ký Phổ cập AI"
+  const SUBMIT_URL = "https://hook.eu2.make.com/lo2iv7fs4l4g8izb3bnf2drl4385rqm6";
+
   (function () {
     var y = document.getElementById("year");
     if (y) y.textContent = new Date().getFullYear();
@@ -747,7 +749,7 @@
     var form = document.getElementById("rform");
     var done = document.getElementById("rdone");
     var btn = document.getElementById("rsubmit");
-    var sink = document.getElementsByName("gform_sink")[0];
+    var hint = document.getElementById("rhint");
     if (!form) return;
 
     function validate() {
@@ -772,30 +774,33 @@
       return ok;
     }
 
-    var submitted = false;
-
     form.addEventListener("submit", function (e) {
+      e.preventDefault();
       if (!validate()) {
-        e.preventDefault();
         var bad = form.querySelector(".field.invalid");
         if (bad) bad.scrollIntoView({ behavior: "smooth", block: "center" });
         return;
       }
-      // Hợp lệ: để form tự POST vào iframe ẩn (không rời trang, không vướng CORS)
-      submitted = true;
+
       btn.disabled = true;
       btn.textContent = "Đang gửi…";
-      setTimeout(finish, 2600); // dự phòng nếu iframe không báo 'load'
+
+      var body = new URLSearchParams(new FormData(form));
+
+      fetch(SUBMIT_URL, { method: "POST", body: body })
+        .then(function (res) {
+          if (!res.ok) throw new Error("HTTP " + res.status);
+          form.hidden = true;
+          done.hidden = false;
+          done.scrollIntoView({ behavior: "smooth", block: "center" });
+        })
+        .catch(function () {
+          btn.disabled = false;
+          btn.textContent = "GỬI ĐĂNG KÝ →";
+          hint.textContent = "Gửi chưa thành công, anh/chị thử lại giúp em, hoặc dùng link form dự phòng bên dưới.";
+          hint.style.color = "#ff8a7a";
+        });
     });
-
-    function finish() {
-      if (!submitted || done.hidden === false) return; // đã hiển thị rồi thì thôi
-      form.hidden = true;
-      done.hidden = false;
-      done.scrollIntoView({ behavior: "smooth", block: "center" });
-    }
-
-    if (sink) sink.addEventListener("load", function () { if (submitted) finish(); });
 
     ["input", "change"].forEach(function (evt) {
       form.addEventListener(evt, function (e) {
