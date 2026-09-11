@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Phổ cập AI miễn phí</title>
-<meta name="description" content="Chương trình Phổ cập AI miễn phí cùng Chuyên gia Hồ Trí Tượng. Dành cho người bắt đầu từ con số 0 — học tới đâu, làm tới đó, ứng dụng ngay vào công việc và cuộc sống." />
+<title>Phổ cập AI – Hành động 21 ngày</title>
+<meta name="description" content="Chương trình Phổ Cập AI miễn phí 100%, dành cho người mới. 21 ngày, mỗi ngày khoảng 30 phút để hiểu AI, tự tay thực hành và biến AI thành công cụ hỗ trợ công việc, kinh doanh và cuộc sống." />
 
 <!-- Open Graph / chia sẻ mạng xã hội (Zalo, Facebook, Messenger...) -->
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://phocapai.hotrituong.com/" />
-<meta property="og:title" content="Học AI miễn phí cùng Chuyên gia Hồ Trí Tượng" />
-<meta property="og:description" content="Chương trình Phổ cập AI cho người bắt đầu từ con số 0 — 30 phút mỗi ngày, làm được việc thật. Đăng ký miễn phí, vào nhóm Zalo ngay." />
+<meta property="og:title" content="Phổ Cập AI – Hành động 21 ngày" />
+<meta property="og:description" content="21 ngày, mỗi ngày khoảng 30 phút, để hiểu AI, tự tay thực hành và biến AI thành công cụ hỗ trợ công việc và cuộc sống. Miễn phí 100%." />
 <meta property="og:image" content="https://phocapai.hotrituong.com/og.jpg" />
 <meta property="og:image:secure_url" content="https://phocapai.hotrituong.com/og.jpg" />
 <meta property="og:image:type" content="image/jpeg" />
@@ -20,8 +20,8 @@
 <meta property="og:site_name" content="Phổ cập AI miễn phí" />
 <meta property="og:locale" content="vi_VN" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Học AI miễn phí cùng Chuyên gia Hồ Trí Tượng" />
-<meta name="twitter:description" content="Phổ cập AI cho người bắt đầu từ con số 0 — 30 phút mỗi ngày, làm được việc thật." />
+<meta name="twitter:title" content="Phổ Cập AI – Hành động 21 ngày" />
+<meta name="twitter:description" content="21 ngày, mỗi ngày khoảng 30 phút, để hiểu AI và tự tay thực hành. Miễn phí 100%." />
 <meta name="twitter:image" content="https://phocapai.hotrituong.com/og.jpg" />
 
 <!--
@@ -29,10 +29,11 @@
   TRANG ĐĂNG KÝ "PHỔ CẬP AI MIỄN PHÍ" — Hồ Trí Tượng
   - 1 file duy nhất, ảnh chân dung đã nhúng sẵn (data URI).
   - Form riêng (id="rform"), gửi bằng fetch() tới webhook Make (biến
-    SUBMIT_URL trong <script>) → Make ghi thẳng vào Google Sheet
+    SUBMIT_URL trong khối script) -> Make ghi thẳng vào Google Sheet
     "Đăng ký Phổ cập AI" của anh (không qua endpoint nội bộ của Google
     nên không bị chặn).
   - Nhóm Zalo hiện ở màn hình "Đăng ký thành công".
+  - Nội dung viết lại theo master prompt conversion copywriting (09/2026).
   ============================================================
 -->
 
@@ -70,6 +71,7 @@
     font-family: var(--font);
     line-height: 1.65;
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
   }
   img { max-width: 100%; display: block; }
   ::selection { background: var(--gold-2); color: #1a1206; }
@@ -146,8 +148,9 @@
     display: grid; grid-template-columns: 1.05fr .95fr; gap: 50px; align-items: center;
     padding: 70px 0 78px;
   }
+  .hero-copy, .hero-figure { min-width: 0; }
   .eyebrow {
-    display: inline-flex; align-items: center; gap: 8px;
+    display: inline-flex; align-items: center; gap: 8px; max-width: 100%; flex-wrap: wrap;
     font-size: 12px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase;
     color: var(--gold-1);
     padding: 8px 16px; border-radius: 999px;
@@ -368,8 +371,6 @@
   }
   .form-done .zalo-list li { margin: 5px 0; }
 
-  .form-fallback-link { text-align: center; margin-top: 18px; font-size: 13.5px; color: var(--muted-2); }
-  .form-fallback-link a { color: var(--gold-1); font-weight: 600; }
 
   /* ---------- Footer ---------- */
   .site-footer {
@@ -402,6 +403,75 @@
     .outcomes { grid-template-columns: 1fr; }
     .brand-sub { display: none; }
   }
+
+  /* ---------- Rewrite: extra components ---------- */
+  .prose { max-width: 640px; margin: 0 auto; }
+  .prose p { margin: 0 0 14px; color: var(--muted); font-size: 16.5px; line-height: 1.75; }
+  .prose p:last-child { margin-bottom: 0; }
+  .prose strong { color: var(--ink); }
+
+  .quote {
+    max-width: 640px; margin: 30px auto 0; padding: 20px 8px;
+    text-align: center; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+    font-size: 19px; font-weight: 700; color: var(--ink); line-height: 1.55;
+  }
+  .quote em { font-style: normal; color: var(--gold-1); }
+
+  .compare {
+    display: grid; grid-template-columns: 1fr auto 1fr; gap: 18px; align-items: center;
+    max-width: 760px; margin: 32px auto 0;
+  }
+  .compare .box { background: var(--bg-card); border: 1px solid var(--line); border-radius: 16px; padding: 22px 20px; }
+  .compare .box.after { border-color: rgba(245, 176, 43, 0.4); }
+  .compare .tag { font-size: 11.5px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); }
+  .compare .after .tag { color: var(--gold-1); }
+  .compare .box p { margin: 10px 0 0; font-size: 15.5px; color: var(--ink); font-weight: 600; line-height: 1.5; }
+  .compare .arrow { font-size: 24px; color: var(--gold-2); text-align: center; }
+  @media (max-width: 640px) {
+    .compare { grid-template-columns: 1fr; }
+    .compare .arrow { transform: rotate(90deg); }
+  }
+
+  .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; max-width: 560px; margin: 32px auto 0; }
+  .stat-tile { background: var(--bg-card); border: 1px solid rgba(245, 176, 43, 0.35); border-radius: 18px; padding: 26px 20px; text-align: center; }
+  .stat-tile .label { font-size: 11.5px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); }
+  .stat-tile .value { font-size: 24px; font-weight: 800; color: var(--gold-1); margin-top: 10px; line-height: 1.3; }
+  @media (max-width: 560px) { .stat-grid { grid-template-columns: 1fr; } }
+
+  .proof-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; max-width: 920px; margin: 0 auto; }
+  .proof-slot { border: 1.5px dashed var(--line-strong); border-radius: 16px; padding: 26px 20px; text-align: center; color: var(--muted); }
+  .proof-slot .k { font-size: 11.5px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold-2); margin-bottom: 8px; }
+  .proof-slot p { margin: 0; font-size: 13.5px; line-height: 1.5; }
+  .proof-note { max-width: 620px; margin: 24px auto 0; text-align: center; font-size: 13.5px; color: var(--muted-2); }
+  @media (max-width: 760px) { .proof-grid { grid-template-columns: 1fr; } }
+
+  .step .time { display: inline-block; font-size: 12px; font-weight: 800; letter-spacing: 1px; color: var(--gold-1); margin-bottom: 4px; }
+  .step .result { display: block; margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--line); font-size: 13px; color: var(--muted); font-style: normal; }
+  .step .result b { color: var(--ink); font-weight: 700; }
+
+  .done-steps { display: grid; gap: 12px; max-width: 440px; margin: 22px auto 26px; padding: 0; text-align: left; }
+  .done-steps li { list-style: none; display: flex; gap: 12px; align-items: flex-start; background: #131218; border: 1px solid var(--line-strong); border-radius: 14px; padding: 14px 16px; }
+  .done-steps .n { flex: none; width: 26px; height: 26px; border-radius: 8px; display: grid; place-items: center; background: linear-gradient(135deg, var(--gold-1), var(--gold-2)); color: #1c1305; font-weight: 800; font-size: 13px; }
+  .done-steps .t { font-weight: 700; color: var(--ink); font-size: 14.5px; }
+  .done-steps .d { font-size: 13px; color: var(--muted); margin-top: 2px; }
+  .done-sign { margin-top: 18px; font-family: "Dancing Script", var(--font); font-size: 24px; color: var(--gold-1); }
+
+  .mid-cta { text-align: center; margin-top: 46px; }
+
+  .sticky-cta {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 60;
+    padding: 12px 16px calc(12px + env(safe-area-inset-bottom));
+    background: rgba(14, 14, 17, 0.92); backdrop-filter: blur(10px);
+    border-top: 1px solid var(--line);
+    transform: translateY(110%); transition: transform .25s ease;
+    display: none;
+  }
+  .sticky-cta.show { transform: translateY(0); }
+  .sticky-cta .btn { width: 100%; }
+  @media (max-width: 760px) {
+    .sticky-cta { display: block; }
+    .site-footer { padding-bottom: 96px; }
+  }
 </style>
 </head>
 <body>
@@ -422,28 +492,42 @@
 
 <!-- ==================== HERO ==================== -->
 <main id="top">
+<!-- ==================== STICKY MOBILE CTA ==================== -->
+<div class="sticky-cta" id="stickyCta">
+  <a class="btn btn--lg" href="#dangky" data-track="mid_page_cta_click">BẮT ĐẦU 21 NGÀY VỚI AI</a>
+</div>
+
+<!-- ==================== 01. HERO ==================== -->
 <section class="hero">
   <div class="wrap">
     <div class="hero-copy">
-      <span class="eyebrow">★ Phổ cập AI cho người Việt</span>
-      <h1>HỌC AI <span class="accent">MIỄN PHÍ</span><br />cùng Chuyên gia Hồ Trí Tượng</h1>
+      <span class="eyebrow">PHỔ CẬP AI — HÀNH ĐỘNG 21 NGÀY</span>
+      <h1>Bạn không cần trở thành <span class="accent">chuyên gia AI</span>.<br />Nhưng bạn cần biết cách làm việc trong một thế giới đã có AI.</h1>
+
       <p class="hero-lead">
-        Bạn không cần biết công nghệ, không cần biết code. Chỉ cần <strong>30 phút mỗi ngày</strong>,
-        bạn sẽ dùng được AI để làm việc nhanh hơn, tạo ra sản phẩm thật và
-        <strong>không bị bỏ lại phía sau</strong>.
+        Nếu mỗi ngày bạn vẫn nghe về ChatGPT, Gemini, Claude và hàng trăm công cụ AI, nhưng vẫn tự hỏi
+        <strong>“AI thực sự giúp được gì cho chính công việc và cuộc sống của mình?”</strong> — chương trình này được tạo ra cho bạn.
+      </p>
+
+      <p class="hero-lead" style="margin-top:-14px">
+        Trong 21 ngày, mỗi ngày khoảng 30 phút, chúng ta sẽ đi từ
+        <strong>không biết bắt đầu từ đâu</strong> → tự tay dùng AI → tạo ra kết quả thật → hình thành thói quen sử dụng AI mỗi ngày.
       </p>
 
       <ul class="benefits">
-        <li><span class="tick">✓</span> Dùng được AI ngay trong ngày đầu tiên</li>
-        <li><span class="tick">✓</span> Tiết kiệm 2–3 giờ làm việc mỗi ngày</li>
-        <li><span class="tick">✓</span> Ứng dụng thẳng vào công việc, kinh doanh, học tập</li>
-        <li><span class="tick">✓</span> Có nhóm Zalo &amp; lộ trình đồng hành 21 ngày</li>
+        <li><span class="tick">✓</span> Không cần biết code</li>
+        <li><span class="tick">✓</span> Không cần giỏi công nghệ</li>
+        <li><span class="tick">✓</span> Không cần mua hàng chục công cụ</li>
+        <li><span class="tick">✓</span> Chỉ cần sẵn sàng bắt đầu</li>
       </ul>
 
       <div class="hero-actions">
-        <a class="btn btn--lg" href="#dangky">ĐĂNG KÝ NGAY →</a>
-        <span class="hero-note">Vào nhóm Zalo &amp; nhận tài liệu ngay sau khi đăng ký</span>
+        <a class="btn btn--lg" href="#dangky" data-track="hero_cta_click">BẮT ĐẦU 21 NGÀY VỚI AI</a>
+        <span class="hero-note">Miễn phí 100% · Bắt đầu từ con số 0 · Học tới đâu, làm tới đó</span>
       </div>
+      <p class="hero-lead" style="font-size:14px;margin-top:14px">
+        Sau khi đăng ký: nhận link nhóm Zalo + tài liệu khởi động + bài thực hành đầu tiên.
+      </p>
     </div>
 
     <figure class="hero-figure">
@@ -463,6 +547,10 @@
       </div>
     </figure>
   </div>
+
+  <div class="wrap">
+    <div class="quote">“Bạn không cần học hết về AI.<br />Bạn chỉ cần học <em>đủ</em> để AI bắt đầu phục vụ cuộc sống của mình.”</div>
+  </div>
 </section>
 
 <!-- ==================== TRUST STRIP ==================== -->
@@ -476,183 +564,348 @@
   </div>
 </div>
 
-<!-- ==================== NỖI ĐAU / VÌ SAO ==================== -->
-<section class="why">
+<!-- ==================== 02. NỖI ĐAU THẬT ==================== -->
+<section class="pain">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">Vì sao là bây giờ</span>
-      <h2>AI không thay thế bạn. Nhưng người biết dùng AI thì có.</h2>
-      <p>Mỗi ngày trôi qua, khoảng cách giữa người dùng được AI và người đứng ngoài lại rộng thêm. Chương trình này sinh ra để bạn không thuộc nhóm đứng ngoài.</p>
+      <span class="eyebrow">Có thể bạn đang ở đúng giai đoạn này</span>
+      <h2>AI xuất hiện ở khắp nơi. Nhưng càng xem nhiều, bạn lại càng không biết nên bắt đầu từ đâu.</h2>
     </div>
-    <div class="cards">
+    <div class="prose">
+      <p>Bạn nghe người khác nói AI có thể viết bài, tạo hình ảnh, nghiên cứu, lập kế hoạch, bán hàng, làm video, tự động hoá…</p>
+      <p>Bạn mở ChatGPT vài lần. Hỏi vài câu. Nhận lại những câu trả lời nghe có vẻ rất hay — nhưng cuối cùng công việc của bạn vẫn gần như làm theo cách cũ.</p>
+      <p>Bạn lưu thêm một video. Theo dõi thêm một chuyên gia. Biết thêm một công cụ.</p>
+      <p>Nhưng vài tuần trôi qua, điều khiến bạn khó chịu nhất vẫn còn đó:</p>
+    </div>
+    <div class="quote">“Tôi biết AI rất quan trọng.<br />Nhưng tôi vẫn chưa thực sự <em>dùng được</em> nó.”</div>
+
+    <div class="cards" style="margin-top:46px">
       <div class="card">
-        <div class="ico">🤔</div>
-        <h3>“Ai cũng nói về AI mà mình không biết bắt đầu từ đâu”</h3>
-        <p>Quá nhiều công cụ, quá nhiều lời khuyên trái chiều. Bạn cần một lộ trình rõ ràng, đi từng bước.</p>
+        <div class="ico">🌀</div>
+        <h3>“Càng tìm hiểu AI, tôi càng rối.”</h3>
+        <p>ChatGPT, Gemini, Claude, NotebookLM, Canva AI, Agent, Automation… Công cụ ngày càng nhiều. Bạn cần biết công cụ nào giải quyết đúng vấn đề của mình hôm nay — không phải thêm 50 công cụ.</p>
       </div>
       <div class="card">
-        <div class="ico">😮‍💨</div>
-        <h3>“Thử ChatGPT vài lần rồi bỏ vì trả lời chung chung”</h3>
-        <p>Vấn đề không phải ở AI, mà ở cách ra lệnh. Biết cách hỏi, kết quả thay đổi hoàn toàn.</p>
+        <div class="ico">💬</div>
+        <h3>“Tôi đã thử ChatGPT, nhưng nó trả lời rất chung chung.”</h3>
+        <p>Đọc xong thấy khá hay, nhưng không biết áp dụng thế nào vào công việc thật. Vấn đề thường không nằm ở AI — mà ở việc chúng ta chưa biết cung cấp bối cảnh, giao việc và dẫn AI tới đúng kết quả.</p>
       </div>
       <div class="card">
-        <div class="ico">💸</div>
-        <h3>“Sợ học khóa đắt tiền rồi vẫn không làm được”</h3>
-        <p>Ở đây bạn học miễn phí và bắt buộc phải làm ra kết quả thật mỗi ngày — không học để cho biết.</p>
+        <div class="ico">📼</div>
+        <h3>“Tôi xem rất nhiều về AI nhưng chưa tạo ra được thứ gì.”</h3>
+        <p>Danh sách video đã lưu ngày càng dài. Nhưng nếu chưa tạo ra một bài viết, kế hoạch, hình ảnh hay giải pháp thật — AI vẫn chỉ đang nằm trong đầu bạn, chưa đi vào cuộc sống.</p>
       </div>
       <div class="card">
-        <div class="ico">⏳</div>
-        <h3>“Việc ngập đầu, ngày nào cũng làm không hết”</h3>
-        <p>Bạn đang làm thủ công hàng loạt việc mà AI có thể xử lý xong trong 2 phút.</p>
+        <div class="ico">⏱️</div>
+        <h3>“Tôi sợ mình đang chậm lại mà không nhận ra.”</h3>
+        <p>Bạn vẫn có kinh nghiệm, vẫn có chuyên môn. Nhưng một người khác đang dùng AI để nghiên cứu nhanh hơn, thử nhiều ý tưởng hơn. Khoảng cách không xuất hiện trong một ngày — nó lớn dần từng chút một.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ==================== BẠN LÀM ĐƯỢC GÌ ==================== -->
+<!-- ==================== 03. CÁI GIÁ CỦA VIỆC ĐỨNG YÊN ==================== -->
+<section class="cost">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Vì sao là bây giờ?</span>
+      <h2>Điều đáng lo không phải AI giỏi đến đâu. Điều đáng lo là bạn sẽ còn làm mọi thứ theo cách cũ bao lâu nữa.</h2>
+    </div>
+    <div class="prose">
+      <p>Một người biết dùng AI không nhất thiết thông minh hơn bạn. Họ có thể cũng chỉ là một nhân viên bình thường. Một chủ shop. Một giáo viên. Một người bán hàng. Một người làm nội dung.</p>
+      <p>Nhưng mỗi ngày họ đang có thêm một “người trợ lý” để suy nghĩ cùng, viết cùng, nghiên cứu cùng và xử lý những việc mất thời gian. Trong khi bạn vẫn tự làm tất cả.</p>
+      <p>Một ngày chưa tạo ra khác biệt lớn. Nhưng 6 tháng. 1 năm. 3 năm. Khoảng cách đó có thể trở thành rất lớn.</p>
+      <p><strong>Không phải vì bạn kém. Mà vì cách làm việc của thế giới đã thay đổi.</strong></p>
+    </div>
+    <div class="quote">“Bạn không cần chạy theo AI.<br />Bạn cần học cách để AI <em>chạy cùng</em> mình.”</div>
+    <div class="mid-cta">
+      <a class="btn btn--lg" href="#dangky" data-track="mid_page_cta_click">TÔI KHÔNG MUỐN ĐỨNG NGOÀI CUỘC</a>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 04. MỞ RA HY VỌNG ==================== -->
+<section class="hope">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Tin tốt là…</span>
+      <h2>Bạn không cần học AI trong nhiều tháng để bắt đầu nhận được giá trị.</h2>
+    </div>
+    <div class="prose">
+      <p>Bạn cũng không cần hiểu hết AI hoạt động thế nào — giống như bạn không cần hiểu động cơ ô tô trước khi học lái xe.</p>
+      <p>Điều bạn cần trước tiên là: <strong>biết mình muốn đi đâu</strong>, và <strong>biết cách điều khiển công cụ</strong>.</p>
+      <p>Chương trình <strong>Phổ Cập AI – Hành Động 21 Ngày</strong> được xây dựng theo đúng tư duy đó. Không nhồi kiến thức. Không chạy theo mọi công cụ mới. Không học để nói về AI.</p>
+    </div>
+    <div class="quote">Học để AI bắt đầu <em>làm được việc</em> cùng bạn.</div>
+  </div>
+</section>
+
+<!-- ==================== 05. KẾT QUẢ SAU 21 NGÀY ==================== -->
 <section class="outcomes-sec">
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">Kết quả thật</span>
-      <h2>Học xong, bạn <em>làm được</em> — không chỉ <em>biết</em></h2>
-      <p>Sau chương trình, đây là những việc bạn tự tay làm được với AI:</p>
+      <h2>Sau 21 ngày, điều quan trọng nhất không phải bạn biết thêm bao nhiêu công cụ — mà là cách bạn nhìn một công việc sẽ thay đổi.</h2>
     </div>
-    <ul class="outcomes">
-      <li><span class="mk">1</span> Viết câu lệnh (prompt) cho AI ra đúng ý, hết cảnh trả lời chung chung</li>
-      <li><span class="mk">2</span> Dùng AI soạn email, viết bài, lên kế hoạch, xử lý công việc nhanh gấp 3 lần</li>
-      <li><span class="mk">3</span> Tạo hình ảnh, nội dung, video ngắn cho bán hàng &amp; thương hiệu cá nhân</li>
-      <li><span class="mk">4</span> Xây một “trợ lý AI” riêng cho đúng công việc của bạn</li>
-      <li><span class="mk">5</span> Chọn đúng công cụ AI miễn phí phù hợp, không tốn tiền lung tung</li>
-      <li><span class="mk">6</span> Có thói quen dùng AI 30 phút mỗi ngày để tiến bộ đều đặn</li>
+
+    <div class="compare">
+      <div class="box">
+        <span class="tag">Trước đây</span>
+        <p>“Việc này mình phải làm như thế nào?”</p>
+      </div>
+      <div class="arrow">→</div>
+      <div class="box after">
+        <span class="tag">Sau này</span>
+        <p>“Trong việc này, AI có thể giúp mình phần nào?”</p>
+      </div>
+    </div>
+    <div class="quote" style="margin-top:26px">Đó mới là năng lực cần mang theo lâu dài.</div>
+
+    <ul class="outcomes" style="margin-top:44px">
+      <li><span class="mk">1</span> Không còn mở AI rồi không biết hỏi gì — bạn biết cách mô tả vấn đề, cung cấp bối cảnh và giao nhiệm vụ đúng.</li>
+      <li><span class="mk">2</span> Có bộ câu lệnh phục vụ đúng công việc của mình, không phải 1.000 prompt tải trên mạng.</li>
+      <li><span class="mk">3</span> Tự tạo được sản phẩm thật với AI: một bài viết, kế hoạch, tài liệu, hình ảnh, kịch bản hay một giải pháp.</li>
+      <li><span class="mk">4</span> Biết cách dùng AI để giảm những việc lặp lại — có thêm một “người trợ lý” hỗ trợ.</li>
+      <li><span class="mk">5</span> Biết công cụ nào đáng dùng và công cụ nào có thể bỏ qua, không còn chạy theo mọi công cụ mới.</li>
+      <li><span class="mk">6</span> Hình thành thói quen 30 phút AI mỗi ngày — 21 ngày kết thúc nhưng khả năng vẫn tiếp tục tăng lên.</li>
     </ul>
+
+    <div class="quote" style="margin-top:40px">Mục tiêu không phải biến bạn thành “người biết AI”.<br />Mục tiêu là biến AI thành <em>một năng lực mới</em> của chính bạn.</div>
+
+    <div class="mid-cta">
+      <a class="btn btn--lg" href="#dangky" data-track="mid_page_cta_click">BẮT ĐẦU 21 NGÀY VỚI AI</a>
+    </div>
   </div>
 </section>
 
-<!-- ==================== LỘ TRÌNH 21 NGÀY ==================== -->
+<!-- ==================== 06. LỘ TRÌNH 21 NGÀY ==================== -->
 <section class="steps">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">Lộ trình</span>
-      <h2>Hành động 21 ngày — Học tới đâu, làm tới đó</h2>
-      <p>Không nhồi lý thuyết. Mỗi ngày một việc nhỏ, mỗi ngày một kết quả thật.</p>
+      <span class="eyebrow">Hành trình 21 ngày</span>
+      <h2>Từ mơ hồ → làm được → biến thành thói quen</h2>
+      <p>Không học dồn. Không cố trở thành chuyên gia sau một đêm. Mỗi ngày một bước nhỏ, mỗi ngày một kết quả thật.</p>
     </div>
     <div class="steps-grid">
       <div class="step">
-        <h3>Chặng 1 · Ngày 1–3 · Dựng nền tảng</h3>
-        <p>Tạo tài khoản AI cơ bản, chọn bộ công cụ miễn phí, nắm tư duy “con người dẫn — AI làm”.</p>
+        <span class="time">NGÀY 1–3</span>
+        <h3>Chặng 1 — Từ mơ hồ → hiểu đúng</h3>
+        <p>Hiểu AI có thể và không thể làm gì. Thiết lập những công cụ cơ bản. Biết cách giao tiếp với AI. Biết công cụ nào thực sự cần với mình.</p>
+        <span class="result">Kết quả: <b>không còn cảm giác AI là một thế giới quá phức tạp.</b></span>
       </div>
       <div class="step">
-        <h3>Chặng 2 · Ngày 4 · Sẵn sàng xuất phát</h3>
-        <p>Nhận lộ trình chi tiết, vào nhóm Zalo, chọn 1 mục tiêu cụ thể để áp dụng ngay.</p>
+        <span class="time">NGÀY 4–7</span>
+        <h3>Chặng 2 — Từ hiểu → tự tay làm được</h3>
+        <p>Lấy chính những việc bạn đang làm mỗi ngày để thực hành: viết, lập kế hoạch, nghiên cứu, tạo nội dung, giải quyết một vấn đề thật.</p>
+        <span class="result">Kết quả: <b>“À, hoá ra AI thực sự giúp được mình.”</b></span>
       </div>
       <div class="step">
-        <h3>Chặng 3 · Ngày 5–21 · Vòng lặp mỗi ngày</h3>
-        <p>Lắng nghe vấn đề → dùng AI tạo giải pháp → làm ra sản phẩm → xin phản hồi thật. Lặp lại mỗi ngày.</p>
+        <span class="time">NGÀY 8–21</span>
+        <h3>Chặng 3 — Từ dùng thử → thành năng lực</h3>
+        <p>Mỗi ngày chọn một vấn đề. Dùng AI cùng giải quyết. Tạo ra một đầu ra. Xem lại. Cải tiến. Lặp lại.</p>
+        <span class="result">Kết quả: <b>AI trở thành một phần trong cách bạn làm việc</b>, không còn là ứng dụng thỉnh thoảng mở ra.</span>
+      </div>
+    </div>
+
+    <div class="compare" style="margin-top:48px">
+      <div class="box">
+        <span class="tag">Ngày 1</span>
+        <p>“AI dùng như thế nào?”</p>
+      </div>
+      <div class="arrow">→</div>
+      <div class="box after">
+        <span class="tag">Ngày 21</span>
+        <p>“Việc này có thể giao cho AI phần nào?”</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ==================== AI NÊN THAM GIA ==================== -->
+<!-- ==================== 07. DÀNH CHO AI ==================== -->
 <section class="audience">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">Dành cho ai</span>
-      <h2>Chương trình này hợp với bạn nếu…</h2>
+      <span class="eyebrow">Dành cho ai?</span>
+      <h2>Bạn không cần giỏi công nghệ. Bạn chỉ cần thật sự muốn thay đổi cách mình làm việc.</h2>
     </div>
-    <div class="cards">
-      <div class="card">
-        <div class="ico">💼</div>
-        <h3>Người đi làm</h3>
-        <p>Muốn xong việc sớm, hết cảnh ôm việc về nhà, tăng hiệu suất mà không tăng giờ làm.</p>
+    <ul class="outcomes">
+      <li><span class="mk">✓</span> Bạn biết AI quan trọng nhưng chưa biết bắt đầu từ đâu.</li>
+      <li><span class="mk">✓</span> Bạn đã thử ChatGPT hoặc Gemini nhưng chưa thấy nó giúp được mình bao nhiêu.</li>
+      <li><span class="mk">✓</span> Bạn xem rất nhiều nội dung AI nhưng vẫn chưa có một lộ trình để thực hành.</li>
+      <li><span class="mk">✓</span> Bạn có chuyên môn, công việc hoặc kinh doanh riêng, muốn biết AI áp dụng vào trường hợp của mình thế nào.</li>
+      <li><span class="mk">✓</span> Bạn không muốn học code, không muốn ngập trong thuật ngữ.</li>
+      <li><span class="mk">✓</span> Bạn không muốn chạy theo hàng trăm công cụ.</li>
+    </ul>
+    <div class="quote">HIỂU ĐÚNG → DÙNG ĐƯỢC → TẠO KẾT QUẢ → TIẾP TỤC TIẾN BỘ</div>
+    <p class="prose" style="text-align:center;margin-top:18px">Và quan trọng nhất: bạn sẵn sàng dành <strong>30 phút mỗi ngày</strong> để thực sự làm.</p>
+    <div class="mid-cta">
+      <a class="btn btn--lg" href="#dangky" data-track="mid_page_cta_click">BẮT ĐẦU 21 NGÀY VỚI AI</a>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 08. MIỄN PHÍ NHƯNG KHÔNG RẺ ==================== -->
+<section class="free-serious">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Vì sao chương trình miễn phí?</span>
+      <h2>Học phí là 0 đồng. Nhưng chương trình không miễn phí sự nghiêm túc.</h2>
+    </div>
+    <div class="prose">
+      <p>Tôi không muốn tạo thêm một nhóm Zalo nơi mọi người vào, tải vài tài liệu rồi để đó. Tôi muốn xây một cộng đồng nơi mỗi ngày học một điều, mỗi ngày làm một việc, mỗi ngày tiến thêm một chút.</p>
+      <p>Tôi chọn miễn phí chương trình này vì tôi tin rằng: AI không nên chỉ thuộc về những người giỏi công nghệ hoặc có tiền mua những khoá học đắt đỏ.</p>
+      <p>Một người bán hàng. Một giáo viên. Một chủ shop nhỏ. Một người đi làm. Một người đang bắt đầu lại. Đều xứng đáng có cơ hội tiếp cận AI đúng cách.</p>
+      <p>Nhưng đổi lại, tôi mong bạn mang tới chương trình này một thứ: <strong>30 phút nghiêm túc mỗi ngày.</strong></p>
+    </div>
+    <div class="stat-grid">
+      <div class="stat-tile">
+        <div class="label">Học phí</div>
+        <div class="value">0 đồng</div>
       </div>
-      <div class="card">
-        <div class="ico">🛍️</div>
-        <h3>Chủ shop &amp; kinh doanh online</h3>
-        <p>Muốn dùng AI làm nội dung, hình ảnh, kịch bản bán hàng và chăm sóc khách nhanh hơn.</p>
-      </div>
-      <div class="card">
-        <div class="ico">✍️</div>
-        <h3>Người làm nội dung &amp; tự do</h3>
-        <p>Muốn tạo bài viết, ảnh, video đều tay mỗi ngày và nhận thêm dự án.</p>
-      </div>
-      <div class="card">
-        <div class="ico">🎯</div>
-        <h3>Người mới hoàn toàn với AI</h3>
-        <p>Chưa biết gì cũng được — chỉ cần bạn thật sự muốn bắt đầu đúng cách.</p>
+      <div class="stat-tile">
+        <div class="label">Cam kết</div>
+        <div class="value">30 phút / ngày × 21 ngày</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ==================== VỀ CHUYÊN GIA ==================== -->
+<!-- ==================== 09. TRIẾT LÝ PHỔ CẬP AI ==================== -->
+<section class="philosophy">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Tại sao là “Phổ cập AI”?</span>
+      <h2>Tôi không muốn biến mọi người thành chuyên gia công nghệ. Tôi muốn giúp người bình thường có thể sử dụng được sức mạnh của AI.</h2>
+    </div>
+    <div class="prose">
+      <p>AI mạnh đến đâu vẫn chỉ là công cụ. Người đặt câu hỏi, người ra quyết định, người chịu trách nhiệm, người tạo ra giá trị… vẫn là con người.</p>
+      <p>Vì vậy chương trình này không dạy bạn phụ thuộc vào AI. Ngược lại — tôi muốn bạn hiểu nó đủ sâu để:</p>
+    </div>
+    <div class="quote">CON NGƯỜI DẪN. AI HỖ TRỢ.<br />KẾT QUẢ PHỤC VỤ CON NGƯỜI.</div>
+    <p class="prose" style="text-align:center;margin-top:16px">Đó là tinh thần của Phổ Cập AI.</p>
+  </div>
+</section>
+
+<!-- ==================== 10. NGƯỜI ĐỒNG HÀNH ==================== -->
 <section class="about">
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">Người đồng hành</span>
-      <h2>Chuyên gia AI Hồ Trí Tượng</h2>
+      <h2>Hồ Trí Tượng</h2>
     </div>
     <div class="about-body">
-      <p>
-        Hồ Trí Tượng theo đuổi một triết lý đơn giản: <strong>AI chỉ là công cụ — con người mới
-        tạo ra giá trị</strong>. Vì vậy anh không dạy lý thuyết dài dòng, mà xây dựng lộ trình
-        <strong>“Hành động 21 ngày”</strong>: mỗi ngày học một việc nhỏ và làm ra một kết quả thật.
-      </p>
-      <p>
-        <strong>Phổ cập AI miễn phí</strong> là chương trình anh khởi xướng với một mục tiêu:
-        giúp càng nhiều người Việt càng tốt biết dùng AI một cách thực tế — để tiết kiệm thời gian,
-        làm việc tốt hơn và mở thêm cơ hội thu nhập.
-      </p>
-      <blockquote>“Không học để biết. Học tới đâu, hành động tới đó.”</blockquote>
+      <p>Tôi cũng từng trải qua đúng cảm giác mà rất nhiều người đang gặp. Công cụ AI xuất hiện quá nhanh — hôm nay một ứng dụng mới, ngày mai một mô hình mới, tuần sau mọi người lại nói về một thứ khác.</p>
+      <p>Và tôi nhận ra: nếu cứ chạy theo công cụ, chúng ta sẽ không bao giờ chạy kịp. Điều quan trọng hơn là xây được một cách tư duy:</p>
+      <p><strong>“Tôi đang có vấn đề gì? AI có thể hỗ trợ phần nào? Tôi cần nói với nó thế nào? Và kết quả cuối cùng phải phục vụ điều gì?”</strong></p>
+      <p>Vì vậy tôi xây dựng Phổ Cập AI không phải để dạy thật nhiều kiến thức. Tôi muốn giúp mọi người tự tay làm được — vì một lần tự làm ra kết quả thật có giá trị hơn rất nhiều so với xem thêm 20 video nói về AI.</p>
+      <blockquote>“Không học AI để biết. Học để làm được.”</blockquote>
       <div class="about-sig">Hồ Trí Tượng</div>
     </div>
   </div>
 </section>
 
-<!-- ==================== FAQ ==================== -->
+<!-- ==================== 11. KẾT QUẢ NGƯỜI HỌC ==================== -->
+<section class="proof">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Kết quả thật</span>
+      <h2>Không cần nói AI hay đến đâu. Hãy nhìn vào những gì người học tự tay làm được.</h2>
+    </div>
+    <div class="proof-grid">
+      <div class="proof-slot">
+        <div class="k">Trước đây</div>
+        <p>Vấn đề người học từng gặp — cập nhật khi có học viên đầu tiên hoàn thành chương trình.</p>
+      </div>
+      <div class="proof-slot">
+        <div class="k">Sau khi thực hành</div>
+        <p>Việc họ tự tay làm được với AI — kèm ảnh chụp bài thực hành thật.</p>
+      </div>
+      <div class="proof-slot">
+        <div class="k">Kết quả</div>
+        <p>Sản phẩm tạo ra, điều họ hiểu được, bước công việc được rút gọn.</p>
+      </div>
+    </div>
+    <p class="proof-note">Phần này sẽ được cập nhật bằng ảnh chụp bài thực hành, sản phẩm và phản hồi thật của học viên — không dùng testimonial dàn dựng.</p>
+  </div>
+</section>
+
+<!-- ==================== 12. FAQ ==================== -->
 <section class="faq">
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">Giải đáp nhanh</span>
-      <h2>Câu hỏi thường gặp</h2>
+      <h2>Có thể đây cũng là điều bạn đang băn khoăn.</h2>
     </div>
     <div class="faq-list">
       <details open>
-        <summary>Chương trình có thật sự miễn phí không?</summary>
-        <p>Có. Hoàn toàn miễn phí 100%. Bạn chỉ cần bỏ ra thời gian và sự nghiêm túc làm mỗi ngày.</p>
+        <summary>Chương trình có thật sự miễn phí 100% không?</summary>
+        <p>Có. Bạn không phải trả học phí để tham gia chương trình cơ bản này. Điều tôi yêu cầu không phải tiền — là sự nghiêm túc. Nếu đã tham gia, hãy dành khoảng 30 phút mỗi ngày để thực hành.</p>
       </details>
       <details>
-        <summary>Tôi không rành công nghệ, có theo được không?</summary>
-        <p>Được. Chương trình thiết kế riêng cho người bắt đầu từ con số 0. Không cần biết code, không cần thuật ngữ.</p>
+        <summary>Tôi hoàn toàn không biết AI, liệu có theo được không?</summary>
+        <p>Đây chính là nhóm chương trình muốn giúp nhất. Bạn không cần biết code, không cần biết thuật ngữ, không cần có nền tảng công nghệ. Chúng ta bắt đầu từ những việc đơn giản nhất.</p>
       </details>
       <details>
-        <summary>Mỗi ngày cần bao nhiêu thời gian?</summary>
-        <p>Khoảng 30 phút mỗi ngày. Quan trọng là đều đặn, không phải học nhiều một lúc rồi bỏ.</p>
+        <summary>Tôi từng dùng ChatGPT nhưng thấy không hiệu quả. Có phù hợp không?</summary>
+        <p>Rất phù hợp. Nhiều người không thiếu công cụ — họ chỉ thiếu cách cung cấp bối cảnh, giao nhiệm vụ và dẫn AI tới đúng kết quả. Đây là một trong những điều chương trình sẽ giúp bạn luyện tập.</p>
       </details>
       <details>
-        <summary>Học online hay offline? Học ở đâu?</summary>
-        <p>Học online qua nhóm Zalo và các video hướng dẫn. Bạn học bất cứ lúc nào rảnh trong ngày.</p>
+        <summary>Tôi rất bận. Mỗi ngày cần bao lâu?</summary>
+        <p>Mục tiêu khoảng 30 phút. Quan trọng không phải học thật lâu — quan trọng là dùng AI vào một việc thật mỗi ngày.</p>
       </details>
       <details>
-        <summary>Đăng ký xong thì chuyện gì xảy ra?</summary>
-        <p>Ngay sau khi điền form, bạn nhận link vào nhóm Zalo dành cho người mới, kèm bộ tài liệu và câu lệnh mẫu để bắt đầu.</p>
+        <summary>Tôi có phải mua phần mềm AI không?</summary>
+        <p>Không. Chương trình ưu tiên những công cụ có phiên bản miễn phí hoặc có thể bắt đầu mà chưa cần trả phí. Khi nào thật sự cần nâng cấp, bạn sẽ hiểu vì sao mình cần nó trước khi bỏ tiền.</p>
+      </details>
+      <details>
+        <summary>Học ở đâu?</summary>
+        <p>Học online thông qua nhóm Zalo, tài liệu và video hướng dẫn. Bạn có thể thực hành vào thời gian phù hợp trong ngày.</p>
+      </details>
+      <details>
+        <summary>Tôi đăng ký xong thì chuyện gì xảy ra?</summary>
+        <p><b>Bước 1:</b> bạn nhận link tham gia nhóm. <b>Bước 2:</b> nhận bộ hướng dẫn khởi động. <b>Bước 3:</b> thực hiện bài đầu tiên. Và hành trình 21 ngày bắt đầu.</p>
       </details>
     </div>
   </div>
 </section>
 
-<!-- ==================== ĐĂNG KÝ (FORM) ==================== -->
+<!-- ==================== 13. FINAL CTA ==================== -->
+<section class="final-cta">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Đừng để “một ngày nào đó” trở thành “quá muộn”</span>
+      <h2>Có thể bạn sẽ tiếp tục đọc về AI thêm vài tháng nữa… Hoặc hôm nay có thể là ngày đầu tiên bạn thực sự bắt đầu dùng nó.</h2>
+    </div>
+    <div class="prose">
+      <p>Không ai biết AI sẽ thay đổi thế giới nhanh đến đâu trong vài năm tới. Nhưng có một điều chúng ta biết: <strong>AI sẽ không quay lại chờ chúng ta.</strong></p>
+      <p>Bạn không cần biết hết. Không cần giỏi ngay. Không cần thay đổi cuộc đời chỉ trong một ngày.</p>
+      <p>Chỉ cần bắt đầu bằng 30 phút hôm nay. Rồi thêm 30 phút ngày mai.</p>
+      <p>Sau 21 ngày, điều tôi mong bạn nhận được không chỉ là kiến thức. Mà là cảm giác:</p>
+    </div>
+    <div class="quote">“Tôi không còn đứng ngoài AI nữa.<br />Tôi đã biết cách bắt đầu.”</div>
+
+    <div class="mid-cta">
+      <span class="eyebrow" style="margin-bottom:16px">PHỔ CẬP AI — HÀNH ĐỘNG 21 NGÀY · <b style="color:var(--gold-1)">MIỄN PHÍ 100%</b></span><br />
+      <a class="btn btn--lg" href="#dangky" data-track="final_cta_click">TÔI MUỐN BẮT ĐẦU NGAY HÔM NAY</a>
+      <p class="hero-lead" style="text-align:center;max-width:460px;margin:16px auto 0;font-size:14px">
+        Khoảng 1 phút đăng ký → nhận link nhóm → bắt đầu bài đầu tiên.
+      </p>
+    </div>
+    <div class="quote" style="margin-top:40px;border:0;font-weight:600;font-size:16px">Đừng chờ đến khi AI trở thành kỹ năng bắt buộc mới bắt đầu học nó.</div>
+  </div>
+</section>
+
+<!-- ==================== 14. FORM ĐĂNG KÝ ==================== -->
 <section class="register" id="dangky">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">Bước cuối cùng</span>
-      <h2>Đăng ký tham gia chương trình</h2>
-      <p>Điền nhanh khoảng 1 phút. Ngay sau đó bạn nhận link vào nhóm Zalo cùng bộ tài liệu cho người mới bắt đầu. Chỗ trong mỗi đợt có giới hạn để kịp hỗ trợ từng người.</p>
+      <span class="eyebrow">Bắt đầu hành trình</span>
+      <h2>BẮT ĐẦU HÀNH TRÌNH 21 NGÀY</h2>
+      <p>Chỉ mất khoảng 1 phút. Form chỉ hỏi những thông tin thực sự cần thiết.</p>
     </div>
 
     <div class="form-shell">
-      <!-- Gửi qua webhook Make → ghi thẳng vào Google Sheet "Đăng ký Phổ cập AI".
-           Đáng tin cậy: đây là endpoint của chính anh, không qua formResponse nội bộ của Google. -->
+      <!-- Gửi qua webhook Make -> ghi thẳng vào Google Sheet "Đăng ký Phổ cập AI". -->
       <form id="rform" class="rform" novalidate>
 
         <div class="field">
@@ -662,64 +915,51 @@
         </div>
 
         <div class="field">
-          <label class="q" for="f-phone">Số điện thoại <span class="req">*</span></label>
+          <label class="q" for="f-phone">Số điện thoại / Zalo <span class="req">*</span></label>
           <input type="tel" id="f-phone" name="phone" autocomplete="tel" inputmode="tel" placeholder="09xx xxx xxx" required />
           <span class="err">Vui lòng nhập số điện thoại hợp lệ.</span>
         </div>
 
         <div class="field">
-          <span class="q">Anh/Chị đã dùng AI chưa? Hiện tại đang ở mức nào? <span class="req">*</span></span>
+          <span class="q">Hiện tại bạn đang ở đâu với AI? <span class="req">*</span></span>
           <div class="opts">
-            <label class="opt"><input type="radio" name="level" value="Chưa từng sử dụng AI" required /><span>Chưa từng sử dụng AI</span></label>
+            <label class="opt"><input type="radio" name="level" value="Chưa từng dùng AI" required /><span>Chưa từng dùng AI</span></label>
             <label class="opt"><input type="radio" name="level" value="Đã thử ChatGPT/Gemini nhưng chưa biết dùng hiệu quả" /><span>Đã thử ChatGPT/Gemini nhưng chưa biết dùng hiệu quả</span></label>
-            <label class="opt"><input type="radio" name="level" value="Đã dùng AI cho một vài công việc" /><span>Đã dùng AI cho một vài công việc</span></label>
-            <label class="opt"><input type="radio" name="level" value="Đang dùng AI thường xuyên nhưng muốn học bài bản hơn" /><span>Đang dùng AI thường xuyên nhưng muốn học bài bản hơn</span></label>
+            <label class="opt"><input type="radio" name="level" value="Đã dùng AI cho một số công việc" /><span>Đã dùng AI cho một số công việc</span></label>
+            <label class="opt"><input type="radio" name="level" value="Đang dùng thường xuyên và muốn nâng cấp" /><span>Đang dùng thường xuyên và muốn nâng cấp</span></label>
           </div>
           <span class="err">Vui lòng chọn một mục.</span>
         </div>
 
         <div class="field">
-          <span class="q">Anh/Chị muốn dùng AI cho việc gì nhất? <span class="req">*</span></span>
-          <div class="opts">
-            <label class="opt"><input type="radio" name="goal" value="Công việc/ Học Tập" required /><span>Công việc / Học tập</span></label>
-            <label class="opt"><input type="radio" name="goal" value="Kinh doanh" /><span>Kinh doanh</span></label>
-            <label class="opt"><input type="radio" name="goal" value="Viết nội dung/ Tạo ảnh/video" /><span>Viết nội dung / Tạo ảnh / video</span></label>
-            <label class="opt"><input type="radio" name="goal" value="Chưa biết, muốn được hướng dẫn" /><span>Chưa biết, muốn được hướng dẫn</span></label>
-          </div>
-          <span class="err">Vui lòng chọn một mục.</span>
-        </div>
-
-        <div class="field">
-          <label class="q" for="f-learn">Anh/Chị muốn học điều gì đầu tiên về AI? <span class="req">*</span></label>
-          <textarea id="f-learn" name="learn" required placeholder="Ví dụ: cách viết câu lệnh cho ChatGPT, dùng AI soạn email, tạo ảnh sản phẩm…"></textarea>
+          <label class="q" for="f-learn">Nếu AI có thể giúp bạn giải quyết một việc ngay hôm nay, bạn muốn đó là việc gì? <span class="req">*</span></label>
+          <textarea id="f-learn" name="learn" required placeholder="Ví dụ: viết email khó nói, lên kế hoạch nội dung tuần này, tóm tắt tài liệu dài…"></textarea>
           <span class="err">Vui lòng nhập nội dung.</span>
         </div>
 
         <div class="submit-row">
-          <button type="submit" class="btn btn--lg btn--block" id="rsubmit">GỬI ĐĂNG KÝ →</button>
+          <button type="submit" class="btn btn--lg btn--block" id="rsubmit">BẮT ĐẦU HÀNH TRÌNH 21 NGÀY →</button>
         </div>
-        <p class="hint" id="rhint">Thông tin của anh/chị được gửi trực tiếp và bảo mật</p>
+        <p class="hint" id="rhint">Thông tin chỉ được sử dụng để phục vụ chương trình Phổ Cập AI.</p>
       </form>
 
+      <!-- ==================== 15. THÀNH CÔNG ==================== -->
       <div class="form-done" id="rdone" hidden>
         <div class="check">✓</div>
-        <h3>Đăng ký thành công! ❤️</h3>
-        <p>Cảm ơn Anh/Chị đã tham gia chương trình Phổ cập AI.
+        <h3>Chào mừng bạn ❤️</h3>
+        <p style="font-weight:700;color:var(--ink)">Bạn vừa làm điều quan trọng nhất: BẮT ĐẦU.</p>
+        <p>Hàng triệu người nói rằng họ muốn học AI. Nhưng rất nhiều người sẽ tiếp tục trì hoãn. Bạn vừa chọn một con đường khác. Bây giờ hãy làm ngay 3 việc:</p>
 
-Để bắt đầu dễ hơn, Anh/Chị vào Nhóm Zalo dành cho người mới để nhận:</p>
-        <ul class="zalo-list">
-          <li>Hướng dẫn tạo và sử dụng các tài khoản AI cơ bản</li>
-          <li>Danh sách công cụ AI miễn phí nên dùng</li>
-          <li>Bộ câu lệnh mẫu cho người mới</li>
-          <li>Tài liệu thực hành và quà tặng cập nhật</li>
+        <ul class="done-steps">
+          <li><span class="n">1</span><span><span class="t">Tham gia nhóm Zalo</span><span class="d">Đây là nơi nhận lộ trình, thông báo và nội dung chương trình.</span></span></li>
+          <li><span class="n">2</span><span><span class="t">Xem hướng dẫn khởi động</span><span class="d">Chuẩn bị những công cụ AI cơ bản.</span></span></li>
+          <li><span class="n">3</span><span><span class="t">Làm bài đầu tiên</span><span class="d">Đừng chỉ vào nhóm rồi để đó — hành động đầu tiên mới biến quyết định hôm nay thành thay đổi thật.</span></span></li>
         </ul>
-        <a class="btn btn--lg" href="https://zalo.me/g/etjev2dxtv82dovmybss" target="_blank" rel="noopener">Tham gia nhóm Zalo »</a>
+
+        <a class="btn btn--lg" href="https://zalo.me/g/etjev2dxtv82dovmybss" target="_blank" rel="noopener" data-track="zalo_join_click">VÀO NHÓM ZALO VÀ BẮT ĐẦU →</a>
+        <div class="done-sign">Hẹn gặp bạn ở bên trong — Hồ Trí Tượng</div>
       </div>
     </div>
-
-    <p class="form-fallback-link">
-      Gặp trục trặc khi gửi? <a href="https://forms.gle/KGJNTyFaUWjC1CWQ8" target="_blank" rel="noopener">Điền form gốc trên Google »</a>
-    </p>
   </div>
 </section>
 </main>
@@ -742,15 +982,55 @@
   // Webhook Make → ghi vào Google Sheet "Đăng ký Phổ cập AI"
   const SUBMIT_URL = "https://hook.eu2.make.com/lo2iv7fs4l4g8izb3bnf2drl4385rqm6";
 
+  function track(name, extra) {
+    try {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push(Object.assign({ event: name }, extra || {}));
+    } catch (e) {}
+  }
+
   (function () {
     var y = document.getElementById("year");
     if (y) y.textContent = new Date().getFullYear();
+
+    // event tracking (hero_cta_click / mid_page_cta_click / final_cta_click / zalo_join_click)
+    document.addEventListener("click", function (e) {
+      var el = e.target.closest("[data-track]");
+      if (el) track(el.getAttribute("data-track"));
+    });
+
+    // sticky mobile CTA — hiện khi cuộn qua khỏi hero
+    var heroEl = document.querySelector(".hero");
+    var sticky = document.getElementById("stickyCta");
+    if (heroEl && sticky && "IntersectionObserver" in window) {
+      var io = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (en) {
+            sticky.classList.toggle("show", !en.isIntersecting);
+          });
+        },
+        { threshold: 0 }
+      );
+      io.observe(heroEl);
+    }
 
     var form = document.getElementById("rform");
     var done = document.getElementById("rdone");
     var btn = document.getElementById("rsubmit");
     var hint = document.getElementById("rhint");
     if (!form) return;
+
+    var startedTracking = false;
+    form.addEventListener(
+      "focusin",
+      function () {
+        if (!startedTracking) {
+          startedTracking = true;
+          track("form_start");
+        }
+      },
+      { once: false }
+    );
 
     function validate() {
       var ok = true;
@@ -790,14 +1070,15 @@
       fetch(SUBMIT_URL, { method: "POST", body: body })
         .then(function (res) {
           if (!res.ok) throw new Error("HTTP " + res.status);
+          track("form_submit");
           form.hidden = true;
           done.hidden = false;
           done.scrollIntoView({ behavior: "smooth", block: "center" });
         })
         .catch(function () {
           btn.disabled = false;
-          btn.textContent = "GỬI ĐĂNG KÝ →";
-          hint.textContent = "Gửi chưa thành công, anh/chị thử lại giúp em, hoặc dùng link form dự phòng bên dưới.";
+          btn.textContent = "BẮT ĐẦU HÀNH TRÌNH 21 NGÀY →";
+          hint.textContent = "Gửi chưa thành công, anh/chị thử lại giúp em nhé.";
           hint.style.color = "#ff8a7a";
         });
     });
